@@ -1,0 +1,14 @@
+amends "pkl:Project"
+
+package {
+  name = "org.rct.suite"
+  version = "0.1.0"
+  description = "The RCT suite, implemented across different RFCs"
+  baseUri = "package://github.com/nikeokoronkwo/rct"
+  packageZipUrl = "https://github.com/nikeokoronkwo/rct/releases/rct.zip" // dummy url
+}
+
+dependencies {
+  ["rct"] = import("../spec/PklProject")
+}
+

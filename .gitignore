@@ -1,0 +1,7 @@
+.pkl-lsp
+
+.env
+.env.*
+!.env.example
+
+
