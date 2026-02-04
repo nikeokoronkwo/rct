@@ -1,0 +1,21 @@
+module org.rct.TestStep
+
+import "Action.pkl"
+
+/// The action to perform for the given step
+action: Action.Name
+
+/// The inputs to provide to the action
+inputs: Mapping<String, Any>?
+
+/// Where to map the outputs if at all
+outputs: Mapping<String, String>?
+
+/// Perform an expect action with mapped values to check that the given value conforms to a certain check
+check: Action.Name | Check
+
+class Check {
+    action: Action.Name
+
+    inputs: Mapping<String, Any>?
+}

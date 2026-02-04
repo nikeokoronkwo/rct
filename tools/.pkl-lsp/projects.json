@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "pklProjects": [
+    {
+      "projectFile": "PklProject",
+      "packageUri": "package://github.com/nikeokoronkwo/org.rct.spec.contrib@0.1.0",
+      "declaredDependencies": {
+        "rct": "package://github.com/nikeokoronkwo/org.rct.spec@0.1.0",
+        "openapi": "package://pkg.pkl-lang.org/pkl-pantry/org.openapis.v3.contrib@1.1.0",
+        "uri": "package://pkg.pkl-lang.org/pkl-pantry/pkl.experimental.uri@1.0.3"
+      },
+      "resolvedDependencies": {
+        "package://pkg.pkl-lang.org/pkl-pantry/org.openapis.v3.contrib@1": {
+          "myType": "remote",
+          "uri": "package://pkg.pkl-lang.org/pkl-pantry/org.openapis.v3.contrib@1.1.0",
+          "checksums": {
+            "sha256": "f59efe207aa5083056fa60a317760f65ef2dc7526b1e437359a31554a4796cf3"
+          }
+        },
+        "package://pkg.pkl-lang.org/pkl-pantry/org.openapis.v3@2": {
+          "myType": "remote",
+          "uri": "package://pkg.pkl-lang.org/pkl-pantry/org.openapis.v3@2.2.0",
+          "checksums": {
+            "sha256": "fdf552ce26297e50322c464ae514c9196b452b2843b0b1d4ca0da51c519efad5"
+          }
+        },
+        "package://pkg.pkl-lang.org/pkl-pantry/pkl.experimental.uri@1": {
+          "myType": "remote",
+          "uri": "package://pkg.pkl-lang.org/pkl-pantry/pkl.experimental.uri@1.0.3",
+          "checksums": {
+            "sha256": "0b1db5755fa0c7651d5c62e0d5ef8a9ed4ed6411fe31769d06714600162e1589"
+          }
+        },
+        "package://github.com/nikeokoronkwo/org.rct.spec@0": {
+          "myType": "local",
+          "uri": "package://github.com/nikeokoronkwo/org.rct.spec@0.1.0",
+          "path": "../spec"
+        },
+        "package://pkg.pkl-lang.org/pkl-pantry/org.json_schema@1": {
+          "myType": "remote",
+          "uri": "package://pkg.pkl-lang.org/pkl-pantry/org.json_schema@1.1.0",
+          "checksums": {
+            "sha256": "d4d55e43325eb781b011846988e9a2f5ddf3d8265acef2d4757fb02f9fd9fd4e"
+          }
+        }
+      },
+      "evaluatorSettings": {}
+    }
+  ]
+}

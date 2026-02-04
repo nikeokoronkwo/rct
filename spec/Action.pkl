@@ -1,0 +1,42 @@
+/// An action
+/// 
+/// Actions are corresponding calls to process data by either the application or mapped to the test suite implementation, which take in calls to data (or possibly not) and then return data in a specified format.
+///
+/// The runner validates the data provided as input to a given action and the output data for the given action as well using the schema provided. Action inputs and outputs can be described using [JSON Schema]
+/// 
+/// The RCT provides some builtin actions for basic functionality in order to help with implementing certain operations where needed. Some of these actions are:
+/// - "get": This action gets the value of a given assigned variable in the current test execution context. Variables cannot be shared between tests
+/// - "set": This action sets the value of a given 
+/// - "requirement": This runs the action specified by the linked requirements. It takes in a "section"  and "args" parameter mapping the requirement section and the arguments to the requirement's action. The "section" is optional only if there is a single requirement linked, and the test case fails if a requirement does not exist for the given
+/// - "shell": [**EXPERIMENTAL**: Do not use, guarantees are not made on security at the moment] Runs the given shell script/command, and captures the output. Fails if shell exits with an exit code other than zero
+module org.rct.Action
+
+import "@json_schema/JsonSchema.pkl"
+import "Spec.pkl"
+import "Action.pkl"
+
+/// Optional description of the given action
+description: String?
+
+/// The arguments accepted by the given action, as a map of key names to properties
+///
+/// The key properties are described in JSON schema format
+arguments: Mapping<String, JsonSchema>
+
+/// The returned values from the given action, given as a map of key names to properties
+returns: Mapping<String, JsonSchema>
+
+hidden containsRequirements = !Spec.requirements.isEmpty
+
+typealias Reference = String(Spec.actions.containsKey(this))
+
+/// The RCT provides some builtin actions for basic functionality in order to help with implementing certain operations where needed. Some of these actions are:
+/// - "get": This action gets the value of a given assigned variable in the current test execution context. Variables cannot be shared between tests
+/// - "set": This action sets the value of a given 
+/// - "requirement": This runs the action specified by the linked requirements. It takes in a "section"  and "args" parameter mapping the requirement section and the arguments to the requirement's action. The "section" is optional only if there is a single requirement linked, and the test case fails if a requirement does not exist for the given
+/// - "shell": [**EXPERIMENTAL**: Do not use, guarantees are not made on security at the moment] Runs the given shell script/command, and captures the output. Fails if shell exits with an exit code other than zero
+typealias BuiltinName = "requirement"(Action.containsRequirements) | "set" | "get" | "shell"
+
+typealias Name = BuiltinName | Reference
+
+

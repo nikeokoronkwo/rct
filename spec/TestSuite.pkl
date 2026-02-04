@@ -1,0 +1,23 @@
+/// A test suite instance
+///
+/// A test suite is used for grouping related test cases together, which can help in requirement coverage (pairing a set of test cases under a given requirement section)
+module org.rct.TestSuite
+
+import "Action.pkl"
+import "TestCase.pkl"
+
+/// The name of the test suite
+name: String?
+
+/// The description of the given test suite
+description: String?
+
+/// References to requirements linked to this test case
+/// TODO: Place constraint on requirements
+requirements: Listing<String>?
+
+/// The test cases listed under this given test suite
+cases: Mapping<String, TestCase>(!this.isEmpty)?
+
+
+

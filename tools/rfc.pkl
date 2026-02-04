@@ -1,0 +1,5 @@
+/// Generator script for generating an RFC class from a given RFC spec
+/// 
+/// Can be used as a starting point for generating RFC spec metadata from existing RFC specs
+
+

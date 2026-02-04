@@ -1,0 +1,27 @@
+amends "pkl:Project"
+
+package {
+  name = "org.rct.spec"
+  baseUri = "package://github.com/nikeokoronkwo/org.rct.spec"
+  packageZipUrl = "https://github.com/nikeokoronkwo/rct/releases/rct.zip"
+  version = "0.1.0"
+  description = "The spec for implementing the RFC Conformance Test Suite"
+  authors {
+    "Nikechukwu Okoronkwo <nikechukwu@gmail.com>"
+  }
+  exclude {
+    "examples/**"
+    "tests/**"
+  }
+  license = "Apache-2.0"
+}
+
+dependencies {
+  ["json_schema"] {
+    uri = "package://pkg.pkl-lang.org/pkl-pantry/org.json_schema@1.1.0"
+  }
+}
+
+tests {
+  ...import*("tests/*.pkl").keys
+}

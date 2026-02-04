@@ -1,0 +1,35 @@
+// Converts spec from source file to PKL
+import "pkl:platform"
+import "pkl:json"
+import "pkl:yaml"
+
+import "@uri/URI.pkl"
+
+
+local sourceProperty = read("prop:source")
+local sourceUri: String =
+  if (sourceProperty.startsWith(Regex(#"\w+:"#))) sourceProperty      // absolute URI
+  else if (sourceProperty.startsWith("/")) "file://\(sourceProperty)" // absolute file path
+  else                                                // relative file path
+    let (pwd = read("env:PWD"))
+      let (path =
+        if (platform.current.operatingSystem.name == "Windows") "/\(pwd)/\(sourceProperty)".replaceAll("\\", "/")
+        else "\(pwd)/\(sourceProperty)"
+      )
+        "file://\(URI.encode(path))"
+
+local source = read(URI.encode(sourceUri))
+
+function parseModule(url: String): Any = 
+    if (url.endsWith(".yaml") || url.endsWith(".yml")) new yaml.Parser {}.parse(read(URI.encode(url)))
+    else if (url.endsWith(".json")) new json.Parser {}.parse(read(URI.encode(url)))
+    else if (url.endsWith(".pkl")) import(URI.encode(url))
+    else throw("Invalid format for spec: must be either one of the following: YAML, JSON, PKL")
+
+output {
+  files {
+    ["\(sourceUri.substring(0, sourceUri.lastIndexOf("."))).pkl"] {
+        value = parseModule(sourceUri)
+    }
+  }
+}

@@ -1,0 +1,31 @@
+/// An RFC requirement
+///
+/// Requirements are specified similar to how RFC requirements are defined in the RFC description. They are used mainly for code and spec coverage, pinning and categorizing test suites by RFC requirement covered.
+/// Requirements can also be used to run custom validation code where specified to final values of test cases by using an action (usually an already-defined action)
+module org.rct.Requirement
+
+import "section.pkl" as s
+import "Action.pkl"
+
+
+/// The different kinds of requirement levels available as defined by [RFC2119](https://www.rfc-editor.org/info/rfc2119) and [RFC8174](https://www.rfc-editor.org/info/rfc8174)
+typealias Level = "MUST"|"MUST NOT"|"REQUIRED"|"SHALL"|"SHALL NOT"|"SHOULD"|"SHOULD NOT"|"RECOMMENDED"|"NOT RECOMMENDED"|"MAY"|"OPTIONAL"
+
+/// The requirement section number.
+///
+/// Multiple requirements can have multiple section numbers. These can then be grouped together 
+/// during filtering by the runner
+section: s.SectionNumber
+
+/// The requirement level defined for this requirement.
+level: Level
+
+/// The description for the given requirement
+description: String?
+
+/// An optional action check to check the given requirement is fulfilled
+///
+/// Unless specified elsewhere in the test case, this check, if defined, is run at the end of the test suite with any variables defined that match its arguments
+check: Action.Reference?
+
+

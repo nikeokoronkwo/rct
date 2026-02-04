@@ -1,0 +1,11 @@
+amends "pkl:test"
+
+import* "assets/*.pkl" as assets
+
+examples {
+  for (key in assets.keys) {
+    [key.drop("assets/".length).replaceLast(".pkl", "")] {
+        assets[key]
+    }
+  }
+}

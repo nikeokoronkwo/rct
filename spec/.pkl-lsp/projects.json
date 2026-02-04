@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "pklProjects": [
+    {
+      "projectFile": "PklProject",
+      "packageUri": "package://github.com/nikeokoronkwo/org.rct.spec@0.1.0",
+      "declaredDependencies": {
+        "json_schema": "package://pkg.pkl-lang.org/pkl-pantry/org.json_schema@1.1.0"
+      },
+      "resolvedDependencies": {
+        "package://pkg.pkl-lang.org/pkl-pantry/org.json_schema@1": {
+          "myType": "remote",
+          "uri": "package://pkg.pkl-lang.org/pkl-pantry/org.json_schema@1.1.0",
+          "checksums": {
+            "sha256": "d4d55e43325eb781b011846988e9a2f5ddf3d8265acef2d4757fb02f9fd9fd4e"
+          }
+        },
+        "package://pkg.pkl-lang.org/pkl-pantry/pkl.experimental.uri@1": {
+          "myType": "remote",
+          "uri": "package://pkg.pkl-lang.org/pkl-pantry/pkl.experimental.uri@1.0.3",
+          "checksums": {
+            "sha256": "0b1db5755fa0c7651d5c62e0d5ef8a9ed4ed6411fe31769d06714600162e1589"
+          }
+        }
+      },
+      "evaluatorSettings": {}
+    }
+  ]
+}

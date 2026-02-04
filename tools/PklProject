@@ -1,0 +1,29 @@
+amends "pkl:Project"
+
+package {
+  name = "org.rct.spec.contrib"
+  baseUri = "package://github.com/nikeokoronkwo/org.rct.spec.contrib"
+  packageZipUrl = "https://github.com/nikeokoronkwo/rct/releases/rct.zip"
+  version = "0.1.0"
+  description = "Utilities for working with the RCT spec, including generators"
+  authors {
+    "Nikechukwu Okoronkwo <nikechukwu@gmail.com>"
+  }
+  exclude {
+    "examples/**"
+    "tests/**"
+  }
+  license = "Apache-2.0"
+}
+
+dependencies {
+    // RCT dependency
+    ["rct"] = import("../spec/PklProject")
+
+    ["openapi"] {
+        uri = "package://pkg.pkl-lang.org/pkl-pantry/org.openapis.v3.contrib@1.1.0"
+    }
+    ["uri"] {
+        uri = "package://pkg.pkl-lang.org/pkl-pantry/pkl.experimental.uri@1.0.3"
+    }
+}

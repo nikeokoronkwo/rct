@@ -1,0 +1,23 @@
+examples {
+  ["minimal"] {
+    new {
+      specversion = "0.1.0"
+      rfc {
+        code = 0
+        title = "Minimal RFC Test example"
+        description = null
+        version = "0.1.0"
+      }
+      actions = null
+      requirements = null
+      tests {
+        new {
+          name = null
+          description = null
+          requirements = null
+          cases = null
+        }
+      }
+    }
+  }
+}

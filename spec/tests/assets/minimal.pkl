@@ -1,0 +1,13 @@
+amends "../../spec.pkl"
+
+rfc {
+  code = 0
+  title = "Minimal RFC Test example"
+  version = "0.1.0"
+}
+
+tests {
+    new {
+      
+    }
+}

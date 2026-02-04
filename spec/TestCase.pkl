@@ -1,0 +1,16 @@
+
+/// A test case
+///
+/// 
+///
+/// Test cases are externally stateless (they do not persist state before and after), and "state" can only persist inside of a test case. Test cases cannot share state. 
+/// 
+module org.rct.TestCase
+
+import "TestStep.pkl"
+
+id: String?
+
+description: String?
+
+steps: Listing<TestStep>

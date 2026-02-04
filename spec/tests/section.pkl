@@ -1,0 +1,29 @@
+amends "pkl:test"
+
+import "../section.pkl"
+
+local sectionTestCases = new Mapping {
+  ["1"] = true
+  ["2"] = true
+  ["2.0"] = true
+  ["2.3"] = true
+  ["2.3.0"] = true
+  ["2ab.2"] = false
+  ["zoo"] = false
+  ["1#2"] = false
+  ["2.3.#"] = false
+  ["2.4"] = true
+  ["2.x"] = false
+  ["3.x"] = false
+  ["4.a.b"] = false
+  ["4a.b"] = false
+  ["4.5.6"] = true
+}.toMap()
+
+facts {
+  for (key, value in sectionTestCases) {
+    ["\(key) is \(if (value) "valid" else "invalid") section number"] {
+        section.isValidSectionNumber(key) == value
+    }
+  }
+}
