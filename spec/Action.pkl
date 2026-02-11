@@ -1,9 +1,9 @@
 /// An action
-/// 
+///
 /// Actions are corresponding calls to process data by either the application or mapped to the test suite implementation, which take in calls to data (or possibly not) and then return data in a specified format.
 ///
 /// The runner validates the data provided as input to a given action and the output data for the given action as well using the schema provided. Action inputs and outputs can be described using [JSON Schema]
-/// 
+///
 /// The RCT provides some builtin actions for basic functionality in order to help with implementing certain operations where needed. Some of these actions are:
 /// - "get": This action gets the value of a given assigned variable in the current test execution context. Variables cannot be shared between tests
 /// - "set": This action sets the value of a given 
@@ -12,8 +12,9 @@
 module org.rct.Action
 
 import "@json_schema/JsonSchema.pkl"
-import "Spec.pkl"
+
 import "Action.pkl"
+import "Spec.pkl"
 
 /// Optional description of the given action
 description: String?
@@ -38,5 +39,3 @@ typealias Reference = String(Spec.actions.containsKey(this))
 typealias BuiltinName = "requirement"(Action.containsRequirements) | "set" | "get" | "shell"
 
 typealias Name = BuiltinName | Reference
-
-

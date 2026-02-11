@@ -1,0 +1,14 @@
+/// RFC Metadata
+module org.rct.RFC
+
+/// The code for the RFC being implemented
+code: UInt(this < 10000)
+
+/// The name of the RFC being implemented
+title: String
+
+/// The description of the RFC
+description: String?
+
+/// The version of this RCT, used for tracking changes if any (e.g. RFC can get errata)
+version: String(semver.isValid(this))

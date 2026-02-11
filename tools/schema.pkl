@@ -5,14 +5,14 @@ import "@rct/Spec.pkl"
 generated_spec = SchemaGenerator.generate(Spec)
 
 output {
-    files {
-        ["rctspec.json"] {
-            value = generated_spec
-            renderer = new JsonRenderer {}
-        }
-        ["rctspec.yaml"] {
-            value = generated_spec
-            renderer = new YamlRenderer {}
-        }
+  files {
+    ["rctspec.json"] {
+      value = generated_spec
+      renderer = new JsonRenderer {}
     }
+    ["rctspec.yaml"] {
+      value = generated_spec
+      renderer = new YamlRenderer {}
+    }
+  }
 }

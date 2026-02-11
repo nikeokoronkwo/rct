@@ -7,7 +7,5 @@ rfc {
 }
 
 tests {
-    new {
-      
-    }
+  new {}
 }

@@ -17,13 +17,13 @@ package {
 }
 
 dependencies {
-    // RCT dependency
-    ["rct"] = import("../spec/PklProject")
+  // RCT dependency
+  ["rct"] = import("../spec/PklProject")
 
-    ["openapi"] {
-        uri = "package://pkg.pkl-lang.org/pkl-pantry/org.openapis.v3.contrib@1.1.0"
-    }
-    ["uri"] {
-        uri = "package://pkg.pkl-lang.org/pkl-pantry/pkl.experimental.uri@1.0.3"
-    }
+  ["openapi"] {
+    uri = "package://pkg.pkl-lang.org/pkl-pantry/org.openapis.v3.contrib@1.1.0"
+  }
+  ["uri"] {
+    uri = "package://pkg.pkl-lang.org/pkl-pantry/pkl.experimental.uri@1.0.3"
+  }
 }

@@ -11,4 +11,3 @@ package {
 dependencies {
   ["rct"] = import("../spec/PklProject")
 }
-

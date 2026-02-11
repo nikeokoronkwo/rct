@@ -3,11 +3,12 @@ module org.rct.Spec
 
 import "pkl:semver"
 
-import "section.pkl"
 import "Action.pkl"
-import "TestSuite.pkl"
-import "Spec.pkl"
 import "Requirement.pkl"
+import "RFC.pkl"
+import "section.pkl"
+import "Spec.pkl"
+import "TestSuite.pkl"
 
 /// The current version of this document
 fixed specversion = "0.1.0"
@@ -25,21 +26,3 @@ requirements: Listing<Requirement>?
 
 /// The test description, mapping test suites to names
 tests: Listing<TestSuite>(!this.isEmpty)
-
-/// RFC Metadata
-class RFC {
-    /// The code for the RFC being implemented
-    code: UInt(this < 10000)
-
-    /// The name of the RFC being implemented
-    title: String
-
-    /// The description of the RFC
-    description: String?
-
-    /// The version of this RCT, used for tracking changes if any (e.g. RFC can get errata)
-    version: String(semver.isValid(this))
-} 
-
-
-

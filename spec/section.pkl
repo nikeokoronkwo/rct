@@ -1,4 +1,4 @@
 typealias SectionNumber = String(isValidSectionNumber(this))
 
 const function isValidSectionNumber(str: String): Boolean =
-    str.split(".").every((el) -> el.toIntOrNull() != null)
+  str.split(".").every((el) -> el.toIntOrNull() != null)

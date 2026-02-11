@@ -15,7 +15,7 @@ outputs: Mapping<String, String>?
 check: Action.Name | Check
 
 class Check {
-    action: Action.Name
+  action: Action.Name
 
-    inputs: Mapping<String, Any>?
+  inputs: Mapping<String, Any>?
 }
